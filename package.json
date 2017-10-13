@@ -1,0 +1,9 @@
+{
+  "name": "thebot",
+  "version": "0.1.0",
+  "description": "Thebot is simple, extensible Chatbot framework for Node.",
+  "main": "index.js",
+  "repository": "http://github.com/therne/thebot",
+  "author": "Hyojun Kim",
+  "license": "MIT"
+}
