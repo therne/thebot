@@ -4,7 +4,8 @@ const sleep = require('sleep-promise');
 
 const bot = new Bot();
 bot.incoming.use(regexParser({
-    weather: /weather/g
+    weather: /weather/g,
+    hello: /hello/g,
 }));
 
 bot.when('weather', async ({i}) => {
@@ -15,7 +16,13 @@ bot.when('weather', async ({i}) => {
     await i.speak('모르겠습니다!')
 });
 
-bot.whenNotFound(async ({i}) => i.speak('뭐어라고~? 찐따가 하는 말이라 못알아듣겠는데~?'));
+bot.when('hello', async ({i}) => {
+    await i.speak('Fuck u!!!!!!!!!!!!!!');
+});
+
+bot.use(async ({i}) => {
+    i.speak('뭐어라고~? 찐따가 하는 말이라 못알아듣겠는데~?')
+});
 
 const channel = new ConsoleChannel();
 channel.start(bot);
